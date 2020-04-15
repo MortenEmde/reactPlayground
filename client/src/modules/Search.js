@@ -13,15 +13,15 @@ class Search extends Component {
 
   fetchMovie() {
     let url = 'http://localhost:8000/movies';
-    // let imdbID = imdbIDArr[Math.floor(Math.random() * imdbIDArr.length)]
-    let imdbID = 'tt0372784';
+    let imdbID = imdbIDArr[Math.floor(Math.random() * imdbIDArr.length)]
+    // let imdbID = 'tt0372784';
     url += `/${imdbID}`
     console.log('imdbID:', imdbID, 'url', url)
 
     fetch(url)
         .then(res => res.json())
-        .then(res => console.log('TEST', res))
-        // .then(res => this.setState({ apiResponse: res }));
+        // .then(res => console.log('TEST', res))
+        .then(res => this.setState({ apiResponse: res }));
   }
 
   componentDidMount() {

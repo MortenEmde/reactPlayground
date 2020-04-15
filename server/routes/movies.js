@@ -6,9 +6,7 @@ apiKey='b004dd99';
 
 router.get('/:movieID', async function(req, res, next) {
   try {
-    const unparsedMovieSearch = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${req.params.movieID}`, { 
-      method: 'GET', 
-    })
+    const unparsedMovieSearch = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${req.params.movieID}`)
     const movieSearch = await unparsedMovieSearch.json();
     res.send(movieSearch);
   } catch (err) {
